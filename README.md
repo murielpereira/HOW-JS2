@@ -145,7 +145,6 @@ Certifique-se de ter o seguinte software instalado:
 ### 3\. Execução do Frontend
 
 1.  **Abra os arquivos HTML** (`cadastro_categoria.html` e `cadastro_produto.html`) diretamente no seu navegador. Você pode simplesmente arrastá-los para a janela do navegador ou usar a opção "Abrir com...".
-      * **Atenção:** Certifique-se de que o `id` do `<tbody>` na tabela em `cadastro_categoria.html` está definido como `listaCategorias` (foi sugerida essa alteração). Se ainda estiver como `listaProdutos`, por favor, ajuste-o.
 
 -----
 
