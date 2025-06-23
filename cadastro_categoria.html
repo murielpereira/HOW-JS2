@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+    <script src="script.js"></script>
+    <script src="database.js"></script>
+    <title>Cadastro de Categoria</title>
+</head>
+<body>
+
+    <div class="botoes-cadastro">
+        <a class="cadastro_produto" href="cadastro_produto.html">Produtos</a>
+        <a class="cadastro_categoria" href="cadastro_categoria.html">Categorias</a>
+    </div>
+
+    <div class="container-cadastro">
+        <form>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required><br>
+            
+            <label for="descricao">Descrição:</label>
+            <textarea id="descricao" name="descricao" required></textarea><br>
+           
+            <label for="seo">Tags SEO:</label>
+            <input type="text" id="seo" name="seo" required><br>
+           
+            <button type="button" onclick="salvarCategoria()">Cadastrar</button>
+        </form>
+    </div>
+
+    <div class="container_tabela">
+        <table class="tabela_produtos">
+            <thead>
+                <tr>
+                    
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Descrição</th>
+                    <th>Tags SEO</th>
+                    <th>Opções</th>
+                </tr>
+            </thead>
+            <tbody id="listaCategorias">
+                <tr>
+                    <td>1</td>
+                    <td>Processador</td>
+                    <td>Esta seção é dedicada aos cérebros dos seus dispositivos! Explore nossa variedade de processadores (CPUs) para desktops e laptops, encontrando a unidade central de processamento ideal para suas necessidades de desempenho, seja para jogos, trabalho ou uso geral.</td>
+                    <td>AMD, Intel, Processador, CPU</td>
+                    <td>
+                        <button class="editar">Editar</button>
+                        <button class="excluir">Excluir</button>
+                    </td>
+                </tr>
+
+                 <tr>
+                    <td>1</td>
+                    <td>Placa de Vídeo</td>
+                    <td>Explore o poder gráfico! Nossa seção de GPUs (Unidades de Processamento Gráfico) oferece placas de vídeo de alto desempenho para gamers, criadores de conteúdo e entusiastas visuais. Encontre a GPU perfeita para imagens impressionantes e experiências fluidas..</td>
+                    <td>GPU, Placa de Vídeo, AMD, Intel, NVIDIA</td>
+                    <td>
+                        <button class="editar">Editar</button>
+                        <button class="excluir">Excluir</button>
+                    </td>
+                </tr>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

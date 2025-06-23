@@ -1,0 +1,95 @@
+.botoes-cadastro {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.botoes-cadastro a {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: #5fabfc;
+    color: white;
+}
+
+.botoes-cadastro a:hover {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+}
+
+.container-cadastro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+form input, textarea {
+    border: #94949467 1px solid;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #218838;
+}
+
+.container_tabela {
+    width: 100%;
+    margin-top: 30px;
+}
+
+/* Tabela */
+
+.container_tabela {
+    width: 100%;
+    margin-top: 30px;
+}
+
+.tabela_produtos {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabela_produtos th,
+.tabela_produtos td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.tabela_produtos td {
+    text-align: center;
+}
+
+thead {
+    background-color: #e9e9e9;
+    color: rgb(0, 0, 0);
+}
+
+tbody tr:nth-child(even) {
+    background-color: #e7e6e6;
+}
+
+table td:nth-child(3) {
+    max-width: 600px;
+}

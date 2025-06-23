@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+    <script src="script.js"></script>
+    <script src="database.js"></script>
+    <title>Cadastro de Produto</title>
+</head>
+<body>
+
+    <div class="botoes-cadastro">
+        <a class="cadastro_produto" href="cadastro_produto.html">Produtos</a>
+        <a class="cadastro_categoria" href="cadastro_categoria.html">Categorias</a>
+    </div>
+
+    <div class="container-cadastro">
+        <form>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required><br>
+            
+            <label for="fabricante">Fabricante:</label>
+            <input type="text" id="fabricante" name="fabricante" required><br>
+            
+            <label for="descricao">Descrição:</label>
+            <textarea id="descricao" name="descricao" required></textarea><br>
+           
+            <label for="quantidade">Quantidade:</label>
+            <input type="number" id="quantidade" name="quantidade" required><br>
+            
+            <label for="preco">Preço:</label>
+            <input type="number" id="preco" name="preco" step="0.01" lang="pt-BR" required><br>
+            
+            <label for="categoria_id">Categoria:</label>
+            <select id="categoria_id" name="categoria_id" required>
+            <option value="">Selecione uma categoria</option>
+            <option value="1">Processador</option>
+            <option value="2">Placa de Vídeo</option>
+            <!-- Adicione outras opções conforme necessário -->
+            </select>
+           
+            <button type="button" onclick="salvarProduto()">Cadastrar</button>
+        </form>
+    </div>
+
+    <div class="container_tabela">
+        <table class="tabela_produtos">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Categoria</th>
+                    <th>Fabricante</th>
+                    <th>Nome</th>
+                    <th>Descrição</th>
+                    <th>Quantidade</th>
+                    <th>Preço</th>
+                    <th>Opções</th>
+                </tr>
+            </thead>
+            <tbody id="listaProdutos">
+                <tr>
+                    <td>1</td>
+                    <td>Processador</td>
+                    <td>AMD</td>
+                    <td>Ryzen 7 5700X3D</td>
+                    <td>3.0 GHz, (4.1GHz Max Turbo), Cache 4MB, 8 Núcleos, 16 Threads, AM4</td>
+                    <td>35</td>
+                    <td>1.649,99</td>
+                    <td>
+                        <button class="editar">Editar</button>
+                        <button class="excluir">Excluir</button>
+                    </td>
+                </tr>
+
+                 <tr>
+                    <td>2</td>
+                    <td>Placa de Vídeo</td>
+                    <td>Gigabyte</td>
+                    <td>NVIDIA GeForce RTX 5070 Ti WINDFORCE SFF 16G</td>
+                    <td>6GB, GDDR7, 256bits, DLSS, Ray Tracing</td>
+                    <td>12</td>
+                    <td>6.999,90</td>
+                    <td>
+                        <button class="editar">Editar</button>
+                        <button class="excluir">Excluir</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
