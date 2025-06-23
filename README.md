@@ -1,11 +1,3 @@
------
-
-Ótima ideia\! Um arquivo `README.md` bem elaborado é essencial para qualquer projeto no GitHub, pois ele serve como a apresentação e documentação principal.
-
-Aqui está um `README.md` completo para o seu projeto, cobrindo o que foi desenvolvido e como configurá-lo e executá-lo.
-
------
-
 # Sistema de Cadastro Web (Produtos e Categorias)
 
 Este projeto é um sistema web básico para gerenciamento de produtos e categorias, desenvolvido com **HTML**, **CSS**, **JavaScript** no frontend e **Node.js** com **Express.js** no backend, utilizando **MySQL** como banco de dados. Ele demonstra as funcionalidades essenciais de cadastro e listagem (CRUD - Create, Read).
