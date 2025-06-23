@@ -74,14 +74,13 @@ async function carregarCategorias() {
         }
         const categorias = await response.json();
         
-        // Assegura que o ID do tbody seja 'listaCategorias' para a página de categorias
         const tbody = document.getElementById('listaCategorias'); 
         if (!tbody) {
             console.warn("Elemento 'listaCategorias' não encontrado. Verifique o HTML.");
             return; 
         }
 
-        tbody.innerHTML = ''; // Limpa o corpo da tabela antes de adicionar novos dados
+        tbody.innerHTML = ''; 
 
         categorias.forEach(categoria => {
             const row = tbody.insertRow();
@@ -96,7 +95,7 @@ async function carregarCategorias() {
                 <button class="editar">Editar</button>
                 <button class="excluir">Excluir</button>
             `;
-            // Futuramente, você adicionará event listeners para editar/excluir aqui
+        
         });
     } catch (error) {
         console.error('Erro ao carregar categorias:', error);
@@ -108,37 +107,35 @@ async function carregarCategorias() {
 async function carregarProdutos() {
     try {
         const response = await fetch('http://localhost:3000/api/produtos');
-        // Verifica se a resposta da rede foi bem-sucedida
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         const produtos = await response.json();
 
-        const tbody = document.getElementById('listaProdutos'); // ID do tbody na página de produtos
+        const tbody = document.getElementById('listaProdutos');
         if (!tbody) {
             console.warn("Elemento 'listaProdutos' não encontrado. Verifique o HTML.");
             return;
         }
 
-        tbody.innerHTML = ''; // Limpa o corpo da tabela
+        tbody.innerHTML = '';
 
         produtos.forEach(produto => {
             const row = tbody.insertRow();
             row.insertCell(0).textContent = produto.id;
-            row.insertCell(1).textContent = produto.categoria_nome; // Nome da categoria
+            row.insertCell(1).textContent = produto.categoria_nome;
             row.insertCell(2).textContent = produto.fabricante;
             row.insertCell(3).textContent = produto.nome;
             row.insertCell(4).textContent = produto.descricao;
             row.insertCell(5).textContent = produto.quantidade;
-            row.insertCell(6).textContent = parseFloat(produto.preco).toFixed(2); // Garante que é número antes de formatar
-
-            // Coluna de opções (Editar/Excluir)
+            row.insertCell(6).textContent = parseFloat(produto.preco).toFixed(2); 
+            
             const acoesCell = row.insertCell(7);
             acoesCell.innerHTML = `
                 <button class="editar">Editar</button>
                 <button class="excluir">Excluir</button>
             `;
-            // Futuramente, você adicionará event listeners para editar/excluir aqui
+          
         });
     } catch (error) {
         console.error('Erro ao carregar produtos:', error);
@@ -150,14 +147,14 @@ async function carregarProdutos() {
 async function preencherCategoriasSelect() {
     try {
         const response = await fetch('http://localhost:3000/api/categorias');
-        // Verifica se a resposta da rede foi bem-sucedida
+        
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         const categorias = await response.json();
         
         const selectElement = document.getElementById('categoria_id');
-        if (!selectElement) return; // Garante que estamos na página de produtos
+        if (!selectElement) return; 
 
         // Limpa as opções existentes, exceto a primeira (opção "Selecione...")
         selectElement.innerHTML = '<option value="">Selecione uma categoria</option>'; 
@@ -179,11 +176,10 @@ async function preencherCategoriasSelect() {
 document.addEventListener('DOMContentLoaded', () => {
     // Verifica qual página estamos e chama a função de carregamento apropriada
     if (document.querySelector('title').textContent === 'Cadastro de Categoria') {
-        // Esta linha tenta garantir que o ID do tbody para categorias seja 'listaCategorias'.
-        // O ideal é já ter o ID correto no HTML para evitar essa adaptação.
-        const tbodyCategorias = document.getElementById('listaProdutos'); // Tenta encontrar o ID antigo
+       
+        const tbodyCategorias = document.getElementById('listaProdutos'); 
         if (tbodyCategorias) {
-            tbodyCategorias.id = 'listaCategorias'; // Renomeia para o ID esperado pela função
+            tbodyCategorias.id = 'listaCategorias'; 
         }
         carregarCategorias(); // Chama a função para carregar e exibir as categorias
     } else if (document.querySelector('title').textContent === 'Cadastro de Produto') {
