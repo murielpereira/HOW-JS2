@@ -108,7 +108,7 @@ async function carregarProdutos() {
         }
         const produtos = await response.json();
 
-        const tbody = document.getElementById('listaProdutos'); // ID do tbody na página de produtos
+        const tbody = document.getElementById('listaProdutos');
         if (!tbody) {
             console.warn("Elemento 'listaProdutos' não encontrado. Verifique o HTML.");
             return;
@@ -126,13 +126,12 @@ async function carregarProdutos() {
             row.insertCell(5).textContent = produto.quantidade;
             row.insertCell(6).textContent = parseFloat(produto.preco).toFixed(2); // Garante que é número antes de formatar
 
-            // Coluna de opções (Editar/Excluir)
             const acoesCell = row.insertCell(7);
             acoesCell.innerHTML = `
                 <button class="editar">Editar</button>
                 <button class="excluir">Excluir</button>
             `;
-            // Futuramente, você adicionará event listeners para editar/excluir aqui
+
         });
     } catch (error) {
         console.error('Erro ao carregar produtos:', error);
@@ -173,8 +172,7 @@ async function preencherCategoriasSelect() {
 document.addEventListener('DOMContentLoaded', () => {
     // Verifica qual página estamos e chama a função de carregamento apropriada
     if (document.querySelector('title').textContent === 'Cadastro de Categoria') {
-        // Esta linha tenta garantir que o ID do tbody para categorias seja 'listaCategorias'.
-        // O ideal é já ter o ID correto no HTML para evitar essa adaptação.
+
         const tbodyCategorias = document.getElementById('listaProdutos'); // Tenta encontrar o ID antigo
         if (tbodyCategorias) {
             tbodyCategorias.id = 'listaCategorias'; // Renomeia para o ID esperado pela função
